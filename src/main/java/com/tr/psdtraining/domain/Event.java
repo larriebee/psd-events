@@ -1,14 +1,17 @@
-package com.tr.psdtraining.domain.dto;
+package com.tr.psdtraining.domain;
 
 import com.tr.psdtraining.domain.User;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * Made by kris n' dave lol, on 21/06/2016.
  */
-
-public class EventRequestDto {
+@Entity
+@Table(name = "event")
+public class Event {
 
     private String location;
 
@@ -18,7 +21,7 @@ public class EventRequestDto {
 
     private String locationDetails;
 
-    public EventRequestDto() {
+    public Event() {
 
     }
 

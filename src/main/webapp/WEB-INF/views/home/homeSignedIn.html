@@ -16,9 +16,27 @@
         <!-- /* The message code is returned from the @Controller */ -->
         <div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=#{${message.message}(${#authentication.name})})">&nbsp;</div>
     </th:block>
-    <p>
-        Welcome to the Spring MVC Quickstart application!
-    </p>
+    <h2>Current Events</h2>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Location</th>
+                <th>Time</th>
+                <th>Owner</th>
+                <th>Location Details</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="event : ${events}">
+                    <td th:text="${event.location}"></td>
+                    <td th:text="${event.time}"></td>
+                    <td th:text="${event.owner}"></td>
+                    <td th:text="${event.locationDetails}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>

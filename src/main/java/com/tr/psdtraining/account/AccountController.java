@@ -27,7 +27,7 @@ class AccountController {
     @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
     @Secured({"ROLE_USER", "ROLE_ADMIN"})
-    public Account currentAccount(Principal principal) {
+    public UserAccount currentAccount(Principal principal) {
         Assert.notNull(principal);
         return accountRepository.findOneByEmail(principal.getName());
     }
@@ -36,7 +36,7 @@ class AccountController {
     @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
     @Secured("ROLE_ADMIN")
-    public Account account(@PathVariable("id") Long id) {
+    public UserAccount account(@PathVariable("id") Long id) {
         return accountRepository.findOne(id);
     }
 }

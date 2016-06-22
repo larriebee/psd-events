@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class EventController {
 
+    private static final String CREATE_EVENT_VIEW_NAME = "createEvent/createEvent";
+
     @Autowired
     EventService eventService;
 
     @RequestMapping(value = "/createEvent", method = RequestMethod.POST)
     public String createEvent(@RequestBody Event event){
         eventService.save(event);
-        return "redirect:/";
+        return CREATE_EVENT_VIEW_NAME;
     }
 }

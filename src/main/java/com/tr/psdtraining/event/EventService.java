@@ -12,6 +12,8 @@ import javax.annotation.PostConstruct;
 import java.util.Date;
 import java.util.List;
 
+import static org.springframework.util.Assert.notNull;
+
 @Service
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class EventService {
@@ -33,6 +35,8 @@ public class EventService {
 
 	@Transactional
 	public Event save(Event event) {
+		notNull(event, "Event must not be null");
+
 		eventRepository.save(event);
 		return event;
 	}

@@ -1,15 +1,21 @@
 package com.tr.psdtraining.event;
 
+import com.tr.psdtraining.domain.Event;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.w3c.dom.events.Event;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+@Controller
 public class EventController {
 
+    @Autowired
     EventService eventService;
 
-    @RequestMapping
+    @RequestMapping(value = "/createEvent", method = RequestMethod.POST)
     public String createEvent(@RequestBody Event event){
-        return "/";
+        eventService.save(event);
+        return "redirect:/";
     }
 }

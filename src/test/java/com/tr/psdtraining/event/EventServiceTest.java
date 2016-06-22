@@ -43,6 +43,6 @@ public class EventServiceTest {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("Event must not be null");
 
-		Event actualEvent = eventService.save(null);
+		eventService.save(null);
 	}
 }

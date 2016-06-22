@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "account")
-public class Account implements java.io.Serializable {
+public class UserAccount implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue
@@ -27,11 +27,11 @@ public class Account implements java.io.Serializable {
 
 	private Instant created;
 
-    protected Account() {
+    protected UserAccount() {
 
 	}
 	
-	public Account(String email, String password, String role) {
+	public UserAccount(String email, String password, String role) {
 		this.email = email;
 		this.password = password;
 		this.role = role;

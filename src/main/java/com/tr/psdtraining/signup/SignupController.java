@@ -31,7 +31,7 @@ public class SignupController {
 		if (errors.hasErrors()) {
 			return SIGNUP_VIEW_NAME;
 		}
-		Account account = accountService.save(signupForm.createAccount());
+		UserAccount account = accountService.save(signupForm.createAccount());
 		accountService.signin(account);
         // see /WEB-INF/i18n/messages.properties and /WEB-INF/views/homeSignedIn.html
         MessageHelper.addSuccessAttribute(ra, "signup.success");

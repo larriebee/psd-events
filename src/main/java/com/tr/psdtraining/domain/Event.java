@@ -1,6 +1,6 @@
 package com.tr.psdtraining.domain;
 
-import com.tr.psdtraining.account.Account;
+import com.tr.psdtraining.account.UserAccount;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +23,7 @@ public class Event {
 
     private Date time;
 
-    private Account owner;
+    private UserAccount owner;
 
     private String locationDetails;
 
@@ -31,7 +31,7 @@ public class Event {
         // default contructor
     }
 
-    public Event(String location, Date time, Account owner, String locationDetails) {
+    public Event(String location, Date time, UserAccount owner, String locationDetails) {
         this.location = location;
         this.time = time;
         this.owner = owner;
@@ -62,11 +62,11 @@ public class Event {
         this.locationDetails = locationDetails;
     }
 
-    public Account getOwner() {
+    public UserAccount getOwner() {
         return owner;
     }
 
-    public void setOwner(Account owner) {
+    public void setOwner(UserAccount owner) {
         this.owner = owner;
     }
 

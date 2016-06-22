@@ -2,7 +2,7 @@ package com.tr.psdtraining.signup;
 
 import org.hibernate.validator.constraints.*;
 
-import com.tr.psdtraining.account.Account;
+import com.tr.psdtraining.account.UserAccount;
 
 public class SignupForm {
 
@@ -32,7 +32,7 @@ public class SignupForm {
 		this.password = password;
 	}
 
-	public Account createAccount() {
-        return new Account(getEmail(), getPassword(), "ROLE_USER");
+	public UserAccount createAccount() {
+        return new UserAccount(getEmail(), getPassword(), "ROLE_USER");
 	}
 }
